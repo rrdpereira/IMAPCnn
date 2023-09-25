@@ -28,7 +28,7 @@ Those images are located on the ***dataset_aerial_imagery*** folder. Three sampl
 
 ## 04 - Training and Validation Results
 
-U-Net support 128, 256 and 512 patches. For this description, the 50 epochs/256 patches training and validation was performed. The performance was verified by the metrics ***loss*** and ***jacard coeficient***, and give us the following results:
+U-Net support 128, 256 and 512 patches. For this description, the 50 epochs/256 patches training and validation was performed. The performance was verified by the metrics ***loss*** and ***jacard coeficient***, as you can see in the following results:
 
 <p align="center">
   <img height=200px src="./docs/sample_08_val_loss_Infc.png" />
