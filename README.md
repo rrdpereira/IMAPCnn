@@ -3,7 +3,7 @@ The Deep Learning (DL) Image Processing use the Semantic segmentation of aerial 
 
 ## 01 - Intro 
 
-The U-Net [[link]](https://arxiv.org/abs/1505.04597/) Convolution Neural Network (CNN) was implemented to do the multiclass (6 classes in this case) semantic segmenataion.
+The U-Net [[link]](https://arxiv.org/abs/1505.04597/) Convolution Neural Network (CNN) was implemented by Robson Rogério Dutra Pereira (rrdpereira) [[link]](https://github.com/rrdpereira/), to perform the multiclass (6 classes in this case) semantic segmenataion.
 
 ## 02 - Dependences
 
