@@ -47,7 +47,7 @@ A high resolution inference was done using the U-Net trained model with 50 epoch
   <img height=200px src="./docs/hi_res/predicted_arr_Infc3b.png" />
 </p>
 
-## 07 - References
+## 06 - References
 
  * https://www.kaggle.com/datasets/humansintheloop/semantic-segmentation-of-aerial-imagery/
 
