@@ -53,4 +53,4 @@ A high resolution inference was done using the U-Net trained model with 50 epoch
 
  * https://arxiv.org/abs/1505.04597/
 
- * https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html/
+ * https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html
