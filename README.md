@@ -7,7 +7,7 @@ The U-Net [[link]](https://arxiv.org/abs/1505.04597/) Convolution Neural Network
 
 ## 02 - Dependences
 
-A Miniconda [[link]](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html/) Python enviroment was create with 3.7.13 Python version and with the following main packages:
+A Miniconda [[link]](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html) Python enviroment was create with 3.7.13 Python version and with the following main packages:
 * tensorflow              2.5.0
 * scikit-image            0.19.3
 * scikit-image            0.19.3
