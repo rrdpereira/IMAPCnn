@@ -42,9 +42,9 @@ But is it possible to train with diffent patches and epochs sizes.
 A high resolution inference was done using the U-Net trained model with 50 epochs/256 patches, and created the following results:
 
 <p align="center">
-  <img height=200px src="./docs/hi_res/predicted_arr_Infc1.png" />
-  <img height=200px src="./docs/hi_res/predicted_arr_Infc2.png" />
-  <img height=200px src="./docs/hi_res/predicted_arr_Infc3.png" />
+  <img height=200px src="./docs/hi_res/predicted_arr_Infc1b.png" />
+  <img height=200px src="./docs/hi_res/predicted_arr_Infc2b.png" />
+  <img height=200px src="./docs/hi_res/predicted_arr_Infc3b.png" />
 </p>
 
 ## 07 - References
