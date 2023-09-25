@@ -1,0 +1,9 @@
+GIT_error_RPC_failed_HTTP_408_curl_22
+
+https://medium.com/swlh/everything-you-need-to-know-to-resolve-the-git-push-rpc-error-1a865fd1ebea
+
+https://itecnote.com/tecnote/git-pull-push-error-rpc-failed-result22-http-code-408/
+
+The default is set to 1MB. Please note the only acceptable values are 524288000 (500mb), 1048576000 (1 GB) and 2147483648 (2 GB). Anything above it, is considered out of range:
+
+git config http.postBuffer 1048576000
