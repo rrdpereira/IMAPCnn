@@ -9,7 +9,7 @@
 
 # E-mail: robsondutra.pereira@outlook.com
 ###############################################################################################################
-import sys, time, os, datetime, glob
+import sys, time, os, datetime, glob, re
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
@@ -41,6 +41,9 @@ from platform import python_version
 print(f"(Sys version) :|: {sys.version} :|:")
 os.system("which python")
 print(f"(Python version) :#: {python_version()} :#:")
+print("--------------------------->>> os.path.dirname(sys.executable):#: {0}".format(os.path.dirname(sys.executable)))
+print("--------------------------->>> re.__version__:#: {0}".format(re.__version__))
+print("--------------------------->>> sys.executable:#: {0}".format(sys.executable))
 ###############################################################################################################
 # Allow GPU memory growth
 physical_devices = tf.config.experimental.list_physical_devices('GPU')
@@ -51,25 +54,32 @@ if physical_devices:
 # Check for available GPUs
 gpu_available = 0 # 0: initial value; 1: GPU available; 2: GPU not available
 gpus = tf.config.experimental.list_physical_devices('GPU')
-if gpus:
+print("--------------------------->>> gpus = {0}".format(gpus)) 
+print("--------------------------->>> len(gpus) = {0}".format(len(gpus))) 
+if len(gpus) == 1:
     try:
+        print("--------------------------->>> gpu_available00 = {0}".format(gpu_available))
         # Use GPU 0 (you can change the index based on your setup)
         tf.config.experimental.set_visible_devices(gpus[0], 'GPU')
         logical_gpus = tf.config.experimental.list_logical_devices('GPU')
         print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPU")
         gpu_available = 1
-        print("--------------------------->>> gpu_available = {0}".format(gpu_available))
+        print("--------------------------->>> gpu_available01 = {0}".format(gpu_available))
     except RuntimeError as e:
-        gpu_available = 2
-        print("--------------------------->>> NOT gpu_available = {0}".format(gpu_available))        
         print(e)
+elif len(gpus) == 0:
+    print("--------------------------->>> NOT gpu_available00 = {0}".format(gpu_available)) 
+    gpu_available = 2
+    print("--------------------------->>> NOT gpu_available01 = {0}".format(gpu_available))
 
-epochsVar = 50
+print("--------------------------->>> STATUS gpu_available = {0}".format(gpu_available))
+
+epochsVar = 20
 # Loading dataset methods
 load_method_ds = 2 # 1: resize; 2: crop
 # reading images and resizing them into the same shape
 root = "./dataset_aerial_imagery/"
-patch_size = 256
+patch_size = 128
 patch_size_start = 0
 out_folder = "./out/"
 os.makedirs(out_folder, exist_ok=True)
@@ -801,21 +811,21 @@ if gpu_available == 1:
             elif len(unique_values) == 5:
                 print(unique_values)
                 class_names = [
-                    "Building_" + str(unique_values[0]),
-                    "Land_" + str(unique_values[1]),
-                    "Road_" + str(unique_values[2]),
-                    "Vegetation_" + str(unique_values[3]),
-                    "Water_" + str(unique_values[4]),
+                    "Bui_" + str(unique_values[0]),
+                    "Lad_" + str(unique_values[1]),
+                    "Rod_" + str(unique_values[2]),
+                    "Veg_" + str(unique_values[3]),
+                    "Wat_" + str(unique_values[4]),
                 ]
             elif len(unique_values) == 6:
                 print(unique_values)
                 class_names = [
-                    "Building_" + str(unique_values[0]),
-                    "Land_" + str(unique_values[1]),
-                    "Road_" + str(unique_values[2]),
-                    "Vegetation_" + str(unique_values[3]),
-                    "Water_" + str(unique_values[4]),
-                    "Unlabeled_" + str(unique_values[5]),
+                    "Bui_" + str(unique_values[0]),
+                    "Lad_" + str(unique_values[1]),
+                    "Rod_" + str(unique_values[2]),
+                    "Veg_" + str(unique_values[3]),
+                    "Wat_" + str(unique_values[4]),
+                    "Unl_" + str(unique_values[5]),
                 ]
                         
             plt.figure(15)
@@ -918,21 +928,21 @@ elif gpu_available == 2:
         elif len(unique_values) == 5:
             print(unique_values)
             class_names = [
-                "Building_" + str(unique_values[0]),
-                "Land_" + str(unique_values[1]),
-                "Road_" + str(unique_values[2]),
-                "Vegetation_" + str(unique_values[3]),
-                "Water_" + str(unique_values[4]),
+                "Bui_" + str(unique_values[0]),
+                "Lad_" + str(unique_values[1]),
+                "Rod_" + str(unique_values[2]),
+                "Veg_" + str(unique_values[3]),
+                "Wat_" + str(unique_values[4]),
             ]
         elif len(unique_values) == 6:
             print(unique_values)
             class_names = [
-                "Building_" + str(unique_values[0]),
-                "Land_" + str(unique_values[1]),
-                "Road_" + str(unique_values[2]),
-                "Vegetation_" + str(unique_values[3]),
-                "Water_" + str(unique_values[4]),
-                "Unlabeled_" + str(unique_values[5]),
+                "Bui_" + str(unique_values[0]),
+                "Lad_" + str(unique_values[1]),
+                "Rod_" + str(unique_values[2]),
+                "Veg_" + str(unique_values[3]),
+                "Wat_" + str(unique_values[4]),
+                "Unl_" + str(unique_values[5]),
             ]
                
         plt.figure(15)
